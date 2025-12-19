@@ -1,6 +1,12 @@
 # Base image (stable for ML + FastAPI)
 FROM python:3.10-slim
 
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir "dvc[s3]"
+
 # Set working directory inside container
 WORKDIR /app
 
@@ -12,6 +18,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy API source code
 COPY api/ api/
+COPY src/ src/
+RUN mkdir -p /app/data
+RUN mkdir -p /app/data/processed
+RUN mkdir -p /app/data/raw
 
 # Copy trained model (for now)
 COPY models/ models/

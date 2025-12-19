@@ -47,22 +47,23 @@ jobs:
   # =============================
   # JOB 2: Deploy to Kubernetes
   # =============================
-  deploy:  
-    name: Deploy to Kubernetes
-    runs-on: self-hosted
-    needs: build
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Setup kubectl
-      run: |
-        mkdir -p ~/.kube
-        echo "${{ secrets.KUBECONFIG_DATA }}" > ~/.kube/config
-
-
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply -f k8s/api-deployment.yaml
-        kubectl apply -f k8s/ui-deployment.yaml
+#  deploy:  
+#    name: Deploy to Kubernetes
+#    runs-on: self-hosted
+#    needs: build
+#
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v4
+#
+#    - name: Setup kubectl
+#      run: |
+#        mkdir -p ~/.kube
+#        echo "${{ secrets.KUBECONFIG_DATA }}" > ~/.kube/config
+#
+#
+#    - name: Deploy to Kubernetes
+#      run: |
+#        kubectl apply -f k8s/api-deployment.yaml
+#        kubectl apply -f k8s/ui-deployment.yaml
+#
