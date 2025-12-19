@@ -22,8 +22,8 @@ COPY src/ src/
 RUN mkdir -p /app/data
 RUN mkdir -p /app/data/processed
 RUN mkdir -p /app/data/raw
-COPY data/raw/reviews.csv.dvc data/raw/reviews.csv.dvc
-COPY models/models.csv.dvc    models/models.csv.dvc
+COPY /app/data/raw/reviews.csv.dvc /app/data/raw/reviews.csv.dvc
+COPY /app/models/models.csv.dvc    /app/models/models.csv.dvc
 
 # Copy trained model (for now)
 COPY models/ models/
