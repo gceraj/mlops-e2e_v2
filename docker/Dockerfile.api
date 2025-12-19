@@ -11,10 +11,10 @@ RUN pip install --no-cache-dir "dvc[s3]"
 WORKDIR /app
 
 # Copy dependency list first (layer caching)
-COPY requirements.txt .
-
+COPY requirements.api.txt .
+COPY dvc.yaml .
 # Install only required dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.api.txt
 
 # Copy API source code
 COPY api/ api/
