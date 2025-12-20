@@ -5,29 +5,29 @@ stages:
     deps:
     - path: data/raw/reviews.csv
       hash: md5
-      md5: 5baab0b5aa0ab243ed00db96cb5e2a2e
-      size: 1695
+      md5: cf1fb9ef625e2936d5e40975fd6434d1
+      size: 444
   preprocess:
     cmd: python src/preprocessing.py
     deps:
     - path: data/raw/reviews.csv
       hash: md5
-      md5: 5baab0b5aa0ab243ed00db96cb5e2a2e
-      size: 1695
+      md5: cf1fb9ef625e2936d5e40975fd6434d1
+      size: 444
     outs:
     - path: data/processed/clean.csv
       hash: md5
-      md5: 70be7b9d47535858d04eb22242ce9ecd
-      size: 1692
+      md5: 153d4b69567a26ec61d6c2e0681b528e
+      size: 435
   train:
     cmd: python src/train.py
     deps:
     - path: data/processed/clean.csv
       hash: md5
-      md5: 70be7b9d47535858d04eb22242ce9ecd
-      size: 1692
+      md5: 153d4b69567a26ec61d6c2e0681b528e
+      size: 435
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 26a09ba09078a000d4e9ac0225a41ae2
-      size: 6588
+      md5: 6aa096473ff0f3998d7429f7f1636221
+      size: 3139
