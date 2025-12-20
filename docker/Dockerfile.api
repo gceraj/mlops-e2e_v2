@@ -22,6 +22,7 @@ COPY src/ src/
 RUN mkdir -p /app/data
 RUN mkdir -p /app/data/processed
 RUN mkdir -p /app/data/raw
+COPY dvc.lock .
 
 # Copy trained model (for now)
 COPY models/ models/
