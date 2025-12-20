@@ -12,7 +12,7 @@ if st.button("Predict"):
         st.warning("Please enter some text")
     else:
         try:
-            response = requests.post(API_URL, params={"text": text}, timeout=3)
+            response = requests.post(API_URL, json={"text": text}, timeout=3)
             response.raise_for_status()
             st.success(response.json())
         except requests.exceptions.ConnectionError:
