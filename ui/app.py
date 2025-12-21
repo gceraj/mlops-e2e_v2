@@ -1,7 +1,9 @@
 import streamlit as st
 import requests
 
-API_URL = "http://localhost:8000/predict"
+ip = requests.get("https://api.ipify.org").text
+
+API_URL = "http://"+ip+":8000/predict"
 
 st.title("Sentiment Analysis")
 
@@ -19,3 +21,4 @@ if st.button("Predict"):
             st.error("🚨 API is not running. Start FastAPI first.")
         except Exception as e:
             st.error(f"Error: {e}")
+
