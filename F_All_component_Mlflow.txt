@@ -1,0 +1,13 @@
+
+
+
+
+
+
+
+
+----------------------------------------------------------------
+Future
+Configuration
+Network Name: my_network_a
+1. Add network mlops-cicd.yml
