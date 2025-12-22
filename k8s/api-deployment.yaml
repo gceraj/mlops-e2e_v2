@@ -14,9 +14,10 @@ spec:
     spec:
       containers:
       - name: api
-        image: gceraj/loksai-api:latest
+        image: gceraj/e2e_v1-api:latest
         ports:
         - containerPort: 8000
+
 ---
 apiVersion: v1
 kind: Service

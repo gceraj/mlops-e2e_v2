@@ -1,4 +1,5 @@
 
+cd /C/Documents/MLOps/E2E_Project/F_All_component_Mlflow
 
 
 
