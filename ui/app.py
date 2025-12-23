@@ -3,7 +3,7 @@ import requests
 
 # ip = requests.get("https://api.ipify.org").text
 
-API_URL = "http://localhost:8000/predict"
+API_URL = "http://gceraj-api-svc:8000/predict"
 
 st.title("Sentiment Analysis")
 
