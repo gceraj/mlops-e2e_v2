@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import joblib
 import os
+import boto3
 
 S3_BUCKET="aws-s3-bucket-dec-15"
 S3_KEY="files/md5/6a/a096473ff0f3998d7429f7f1636221"
