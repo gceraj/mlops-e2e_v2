@@ -8,10 +8,6 @@ joblib
 fastapi
 uvicorn
 
-# UI
-streamlit
-requests
-
 # Experiment tracking
 mlflow
 boto3
