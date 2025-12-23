@@ -1,6 +1,4 @@
 [core]
-    remote = myremote
+    remote = s3remote
 ['remote "s3remote"']
-    url = s3://edu-loksai-mlproj-bkt1
-['remote "myremote"']
-    url = s3://aws-s3-bucket-dec-15
+    url = s3://amzn-s3-gceraj-bucket
