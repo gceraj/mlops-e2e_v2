@@ -1,4 +1,6 @@
 [core]
-    remote = s3remote
+    remote = myremote
 ['remote "s3remote"']
     url = s3://amzn-s3-gceraj-bucket
+['remote "myremote"']
+    url = s3://amzn-s3-gceraj-bucket/DVC_MLFLOW/

@@ -19,8 +19,13 @@ model.fit(Xtr, ytr)
 preds = model.predict(Xte)
 acc = accuracy_score(yte, preds)
 
-with mlflow.start_run():
+remote_server_uri = "http://ec2-98-82-112-163.compute-1.amazonaws.com:5000/"
+mlflow.set_tracking_uri(remote_server_uri)
+mlflow.set_experiment("traces-quickstart")
+
+with mlflow.start_run() as run:
     mlflow.log_metric("accuracy", acc)
+    mlflow.sklearn.log_model(model, "model")
 
 joblib.dump((model, vectorizer), "models/model.pkl")
 print("Accuracy:", acc)
