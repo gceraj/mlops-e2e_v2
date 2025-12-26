@@ -19,7 +19,8 @@ model.fit(Xtr, ytr)
 preds = model.predict(Xte)
 acc = accuracy_score(yte, preds)
 
-remote_server_uri = "http://ec2-98-82-112-163.compute-1.amazonaws.com:5000/"
+# remote_server_uri = "http://ec2-98-82-112-163.compute-1.amazonaws.com:5000/"
+remote_server_uri="http://0.0.0.0:5000"
 mlflow.set_tracking_uri(remote_server_uri)
 mlflow.set_experiment("traces-quickstart")
 
