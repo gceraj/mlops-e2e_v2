@@ -13,7 +13,7 @@ COPY ui/ ui/
 
 # Expose Streamlit port
 EXPOSE 8501
-EXPORT 30007
+EXPOSE 30007
 
 # Start Streamlit app
 # CMD ["streamlit", "run", "ui/app.py", "--server.address", "0.0.0.0"]
